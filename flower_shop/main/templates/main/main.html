@@ -1,0 +1,136 @@
+{% extends 'xmeta/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load allauth account %}
+{% block content %}
+
+<div class="wrapper__main-text">
+    <h1>Текст на главной </h1>
+    <h1>подзаголовок</h1>
+</div>
+<div class="wrapper__slots-games">
+    <p class="slots-games__naming">Ваши любимые слоты и игры тут!</p>
+    <div class="slots-games">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="LogModal" tabindex="-1" aria-labelledby="LogModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>
+                    Вы уже зарегестрированы на нашем сайте?
+                    <a href="{% url 'account_login' %}">
+                        <button> Перейти к авторизации!!</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="RegModal" tabindex="-1" aria-labelledby="RegModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body modal-body-reg">
+                <p></p>
+
+                <p>
+                    Вы ещё не зарегестрированы на нашем сайте?
+                    <a href="{% url 'account_signup' %}">
+                        <button> Перейти к регистрации!!</button>
+                    </a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="ExitModal" tabindex="-1" aria-labelledby="ExitModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!--
+                <form action="" class="modal-form">
+                    <p>Вы действительно хотите выйти?</p>
+                    <button type="submit" class="de_active" id="send_btn">✨ Выйти</button>
+                </form>
+                -->
+
+
+                <p>Вы действительно хотите выйти?</p>
+                {% url 'account_logout' as action_url %}
+                {% element form method="post" action=action_url no_visible_fields=True %}
+                {% slot body %}
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                {% endslot %}
+
+                {% slot actions %}
+                {% element button type="submit" %}
+                {% trans '✨ Выйти' %}
+                {% endelement %}
+                {% endslot %}
+                {% endelement %}
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% if user.is_authenticated %}
+<div class="modal fade" id="HiModal" tabindex="-1" aria-labelledby="HiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body modal-body-reg">
+                <p></p>
+
+                <p>Добро пожаловать на xmeta!</p>
+                <form action="" method="post" id="ip_users">
+                    <span class="userEmail" style="visibility: hidden;">{{ user.email }}</span>
+                    {% csrf_token %}
+                    
+                    {{form_user_ip.user}}
+                    {{form_user_ip.user_ip}}
+                    {{form_user_ip.email}}
+                    
+                    <button type="submit">Продолжить</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/user_ip.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript">
+    $(function() {
+        if (!localStorage.getItem("seenModal")) {
+            localStorage.setItem("seenModal", true);
+            $('#HiModal').modal('show')
+          }
+        else{
+            return;
+        }
+    })
+</script>
+{% endif %}
+{% endblock content %}

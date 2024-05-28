@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+}
+
+.dialog {
+  border-radius: 8px;
+  background: rgb(24, 24, 27);
+  width: 230px;
+  min-height: 205px;
+}
+.dialog .dialog-window {
+  padding: 15px 19px;
+}
+.dialog .dialog-window .dialog-name {
+  display: flex;
+  justify-content: space-between;
+}
+.dialog .dialog-window .dialog-name .left {
+  display: flex;
+}
+.dialog .dialog-window .dialog-name .left span {
+  width: 9px;
+  height: 9px;
+  display: block;
+  border-radius: 50%;
+  background: rgb(91, 218, 32);
+}
+.dialog .dialog-window .dialog-name .left p {
+  color: #FFF;
+  color: rgb(214, 214, 214);
+  font-size: 10px;
+  font-weight: 500;
+  margin-left: 7px;
+}
+.dialog .dialog-window .dialog-name .right {
+  margin-right: -19px;
+}
+.dialog .dialog-window .dialog-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dialog .dialog-window .dialog-text div {
+  max-width: 99.5px;
+  min-height: 15px;
+  border: 0.6px solid rgb(98, 98, 98);
+  border-radius: 7px;
+}
+.dialog .dialog-window .dialog-text div p {
+  color: #B1B1B1;
+  font-size: 10px;
+}
+.dialog .dialog-window .dialog-text .dialog-to {
+  margin-left: 92px;
+}
+.dialog .dialog-window .dialog-input input {
+  width: 182px;
+  height: 28px;
+  background-color: transparent;
+  border: 0.6px solid rgb(98, 98, 98);
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 16px;
+  transition: all 0.5s ease-in-out;
+}
+.dialog .dialog-window .dialog-input .active {
+  background-image: url("./emojisky.png");
+  background-repeat: no-repeat;
+  background-position: center left 8px;
+  padding-left: 32px;
+}/*# sourceMappingURL=s.css.map */

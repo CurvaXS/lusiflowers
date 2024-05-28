@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="block__FAQ">
+        <div class="FAQ-item">
+            <p class="FAQ-answer">
+                Привозите ли вы подарки ко времени?
+            </p>
+            <p class="FAQ-question">
+                Доставляем цветы ежедневно с 10:00 до 18:00. Если вы оформляете покупку до 17:00, привозим его в течение
+                1–2 часов после оплаты. В остальных случаях — на следующий день с 10:00. Также вы можете выбрать
+                доставку к определенному часу, в этом случае стоимость рассчитывается в зависимости от адреса
+                получателя.
+            </p>
+        </div>
+        <div class="FAQ-item">
+            <p class="FAQ-answer">
+                Предоставляете ли вы скидки?
+            </p>
+            <p class="FAQ-question">
+                На lusi.flowers вы можете недорого приобрести цветочную композицию любого формата. За каждую покупку
+                начисляем кешбэк в виде бонусов. Оплачивайте ими до 100% стоимости следующих покупок. Также дарим баллы
+                за отзывы о нашей работе — подробнее об этом вы можете узнать у наших менеджеров.
+            </p>
+        </div>
+        <div class="FAQ-item">
+            <p class="FAQ-answer">
+                Как быть, если я не знаю точный адрес или время доставки?
+            </p>
+            <p class="FAQ-question">
+                Мы можем сами узнать у получателя, где и когда ему будет удобно получить подарок. После того как
+                согласуем время, зафиксируем его и отправим уведомление на телефон или электронную почту.
+            </p>
+        </div>
+        <div class="FAQ-item">
+            <p class="FAQ-answer">
+                Если получателя не окажется на месте?
+            </p>
+            <p class="FAQ-question">
+                В такой ситуации мы всегда звоним клиенту и обсуждаем возможные варианты решения. По вашему желанию
+                можем доставить композицию в другой день, по другому адресу или отменить заказ, вернув часть оплаты.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<h1>Текст</h1>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="technical_support.css">
+</head>
+
+<body>
+
+    <button class=""></button>
+
+    <div class="click-me"></div>
+
+    <div class="dialog">
+        <div class="dialog-close">X</div>
+        <div class="dialog-window">
+            <div class="dialog-name">
+                <div class="left">
+                    <span></span>
+                    <p>Техническая поддержка</p>
+                </div>
+                <div class="right">
+                    <img src="./Vectors.png" alt="">
+                </div>
+            </div>
+            <div class="dialog-text">
+                <div class="dialog-from">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam aut culpa placeat, quia
+                    </p>
+                </div>
+                <div class="dialog-to">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus ipsa laboriosam quia numquam
+                    </p>
+                </div>
+                <div class="dialog-from">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam aut culpa placeat, quia
+                    </p>
+                </div>
+                <div class="dialog-to">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus ipsa laboriosam quia
+                        numquam
+                    </p>
+                </div>
+            </div>
+            <div class="dialog-input">
+                <input class="active" type="text" id="dialog-input" placeholder="Напишите свое сообщение..">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let input = document.getElementById('dialog-input')
+    input.addEventListener('click', (e) => {
+        input.classList.remove('active')
+    })
+    if (input.value == '') {
+        input.classList.add('active')
+    }
+
+    dialog = document.querySelector('.dialog')
+
+    function create_dialog() {
+        dialog.classList.add('dialog-transition')
+        dialog.style.right = `100px`;
+        setTimeout(function () {
+            interval();
+        }, 1200)
+    }
+
+    function close_dialog() {
+        dialog.classList.add('dialog-transition-back')
+        dialog.style.right = `-240px`;
+        setTimeout(function () {
+            interval();
+        }, 1200)
+    }
+
+    function interval() {
+        if (document.querySelector('.dialog-transition')) {
+            dialog.classList.remove('dialog-transition')
+        }
+        if (document.querySelector('.dialog-transition-back')) {
+            dialog.classList.remove('dialog-transition-back')
+        }
+    }
+
+    let clickMe = document.querySelector('.click-me')
+    clickMe.addEventListener('click', create_dialog)
+
+    let closeMe = document.querySelector('.dialog-close')
+    closeMe.addEventListener('click', close_dialog)
+</script>
+
+</html>

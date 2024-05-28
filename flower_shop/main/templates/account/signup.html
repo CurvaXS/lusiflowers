@@ -1,0 +1,43 @@
+
+{% extends 'main/base.html' %}
+{% load static %}
+{% load allauth i18n %}
+
+{% block content %}
+
+
+    <p class="sing-up_question">
+        {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+    </p>
+
+    {% url 'account_signup' as action_url %}
+    {% element form form=form method="post" action=action_url tags="entrance,signup" %}
+        {% slot body %}
+        <div class="form-header">
+            <img src="" alt="">
+            <p>Заполните для создания аккаунта</p>
+        </div>
+        <div class="form-body">
+            {% csrf_token %}
+            {% element fields form=form unlabeled=True %}
+            {% endelement %}
+            {% if redirect_field_value %}
+                <input type="hidden"
+                       name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}" />
+            {% endif %}
+        {% endslot %}
+    </div>
+        {% slot actions %}
+            {% element button tags="prominent,signup" type="submit"%}
+                {% trans "Sign Up" %}
+            {% endelement %}
+        {% endslot %}
+    {% endelement %}
+
+    {% if SOCIALACCOUNT_ENABLED %}
+        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    {% endif %}
+
+{% endblock content %}
+

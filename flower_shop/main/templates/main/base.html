@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lusi.flowers</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/burger.css' %}">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header__wrapper"><a class="header__logo"><img src="{% static 'img/logo.png' %}" alt="#" /></a>
+            <div class="header__rasp">
+                <p>Ежедневно с 9:00 до 19:00</p>
+                <p>8 (495) 905-35-85</p>
+            </div>
+            <div class="header__logo-alt">
+                <p>Lusi Flowers</p>
+            </div>
+            <div class="header__search">
+                <input type="text" placeholder="Поиск" />
+            </div>
+            <div class="header__menu-main"><a href="">Отзывы</a><a href="">Доставка</a></div>
+            <div class="header__settings">
+                <div class="header__menu-burger">
+                    <details>
+                        <summary></summary>
+                        <nav class="menu"><a href="#"></a></nav>
+                    </details>
+                </div>
+                <div class="header__menu-account"><img src="{% static 'img/account.png' %}" alt="" /></div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer__top">
+            <div class="footer__wrapper">
+                <div class="block__footer-logo">
+                    <h1 class="footer-logo-title">Служба заботы</h1>
+                    <h1 class="footer-logo-name">Lusi Flowers</h1>
+                </div>
+                <div class="block__footer-info">
+                    <div class="block__footer-communication">
+                        <h1 class="footer-write_us">Мы всегда на связи</h1>
+                        <button class="footer-write_us-btn">Написать нам</button>
+                    </div>
+                    <div class="block__footer-list">
+                        <ul>
+                            <li>lusiflower@mail.ru</li>
+                            <li>Отвечаем моментально с 9:30 до 18:00, без автоответчиков</li>
+                            <li>8 (800) 888-00-55, 8 (495) 905-35-85</li>
+                            <li>Звонок по России бесплатный</li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bootom">
+            <div class="footer__wrapper">
+
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+
+</html>
