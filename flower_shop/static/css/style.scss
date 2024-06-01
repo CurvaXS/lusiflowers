@@ -83,15 +83,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/img/banner.png');
+    background-image: url('../img/banner.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
     .banner-info {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
         // padding-top: 100px;
         p {
             font-size: 48px;
@@ -124,14 +126,15 @@ header {
 
 }
 
-.wrapper{
+.wrapper {
     max-width: 1680px;
     margin: 0 auto;
 }
 
-.block__bouquet{
+.block__bouquet {
     width: 100%;
-    .block_top{
+
+    .block_top {
         margin: 113px 0 60px;
         width: 100%;
         height: 50px;
@@ -140,49 +143,58 @@ header {
         align-items: center;
         font-style: italic;
         font-weight: 400;
-        .block__name{
+
+        .block__name {
             display: flex;
             align-items: center;
-            h1{
+
+            h1 {
                 font-size: 40px;
                 line-height: 51.2px;
                 margin-right: 32px;
             }
-            h3{
+
+            h3 {
                 font-size: 20px;
                 line-height: 25.6px;
             }
         }
-        .block__price{
-            p{
+
+        .block__price {
+            p {
                 font-size: 20px;
             }
         }
     }
-    .block__items{
+
+    .block__items {
         width: 100%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
 
-        .item{
+        .item {
             width: 503px;
             font-style: italic;
-            img{
+
+            img {
                 width: 100%;
-                border-radius: 4px ;
+                border-radius: 4px;
             }
-            .item-info{
+
+            .item-info {
                 font-size: 24px;
+
                 p.item-name,
-                p.item-price{
+                p.item-price {
                     font-size: 32px;
                 }
-                
+
             }
         }
     }
-    .show_more{
+
+    .show_more {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -197,13 +209,15 @@ header {
 
     }
 }
-.block__FAQ{
+
+.block__FAQ {
     width: 100%;
+    margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
-    .FAQ-item{
+
+    .FAQ-item {
         width: 803px;
         height: 431px;
         font-style: italic;
@@ -211,38 +225,136 @@ header {
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         background: rgb(255, 255, 255);
         margin-bottom: 150px;
-        p{
+
+        p {
             width: 90%;
             text-align: left;
             padding-left: 16px;
-            
+
         }
-        .FAQ-answer{
+
+        .FAQ-answer {
             font-size: 24px;
             padding-top: 50px;
             padding-bottom: 50px;
         }
     }
 }
-.footer__wrapper{
+
+.footer__wrapper {
     width: 1580px;
     margin: 0 auto;
 }
-footer{
+
+footer {
     width: 100%;
     margin-top: 150px;
-    .footer__top{
+
+    .footer__top {
+        padding-top: 80px;
         width: 100%;
         height: 925px;
         background-color: rgb(235, 216, 224);
-        .footer__wrapper{
-            
+
+        .footer__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .block__footer-logo {
+                width: 100%;
+                text-align: center;
+
+                h1.footer-logo-title {
+                    font-size: 48px;
+                    padding-bottom: 1em;
+                }
+
+                h1.footer-logo-name {
+                    font-family: "Love Light";
+                    font-size: 128px;
+                }
+            }
+
+            .block__footer-info {
+                width: 100%;
+                margin-top: 52px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .block__footer-communication {
+                    text-align: center;
+
+                    h1.footer-write_us {
+                        font-size: 40px;
+                        margin-bottom: 70px;
+                    }
+
+                    button.footer-write_us-btn {
+                        width: 460px;
+                        height: 83px;
+                        padding: 20px 0;
+                        font-size: 32px;
+                        font-style: italic;
+                        text-align: center;
+                        border: none;
+                        border-radius: 20px;
+                        background: rgb(244, 205, 221);
+                        transition: all 0.08s ease-in-out;
+                    }
+
+                    button.footer-write_us-btn:active {
+                        transform: scale(0.9);
+                    }
+                }
+
+                .block__footer-list {
+                    max-width: 650px;
+
+                    ul {
+                        li {
+                            font-size: 36px;
+                            font-style: italic;
+                            padding-bottom: 0.7em;
+                        }
+                    }
+                }
+            }
         }
     }
-    .footer__bootom{
+
+    .footer__botom {
         width: 100%;
         height: 882px;
         background-color: rgb(56, 56, 56);
-        .footer__wrapper{}
+
+        .footer__wrapper {
+            padding-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .block__footer-holidays_list {
+                max-width: 275px;
+                color: #fff;
+                font-size: 24px;
+
+                ul {
+                    li:nth-child(1) {
+                        padding-bottom: 2em;
+                    }
+                    li{
+                        padding-bottom: 0.2em;
+                    }
+                    .block__social-networks{
+                        margin-top: 1em;
+                        svg{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
