@@ -36,7 +36,15 @@
                 <div class="header__menu-burger">
                     <details>
                         <summary></summary>
-                        <nav class="menu"><a href="#"></a></nav>
+                        <nav class="menu">
+                            
+                            {% if user.is_authenticated %}
+                            <li> <a href="{% url 'account_logout' %}">Выход</a></li>
+                            {% else %}
+                            <li> <a href="{% url 'account_login' %}">Вход</a></li>
+                            <li> <a href="{% url 'account_signup' %}">Регистрация</a></li>
+                            {% endif %}
+                        </nav>
                     </details>
                 </div>
                 <div class="header__menu-account"><img src="{% static 'img/account.png' %}" alt="" /></div>

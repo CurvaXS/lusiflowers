@@ -42,6 +42,11 @@ details {
     animation-name: menuAnim;
     position: absolute;
   }
+  details[open] summary{
+    position: absolute;
+    z-index: 1;
+  }
+  
   details[open] summary::before {
     content: "X";
   }
@@ -52,13 +57,13 @@ details {
   .menu {
     height: 0;
     width: fit-content;
-    border-radius: var(--cornerRad);
-    background-color: var(--primColor);
+    border-radius: 8px;
+    background-color: rgb(235, 216, 224);
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     margin-top: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     overflow: hidden;
     animation: closeMenu 300ms ease-in-out forwards;
   }
@@ -71,13 +76,13 @@ details {
     text-align: center;
     transition: filter 200ms linear 0s;
   }
-  .menu a:nth-of-type(1) {
+  .menu li a:nth-of-type(1) {
     padding-top: 24px;
   }
-  .menu a:nth-last-of-type(1) {
+  .menu li a:nth-last-of-type(1) {
     border-bottom: none;
   }
-  .menu a:hover {
+  .menu li a:hover {
     filter: brightness(200%);
   }
   
@@ -92,14 +97,14 @@ details {
       top: 50px;
     }
     100% {
-      height: 312px;
+      height: 90px;
       top: 50px;
     }
   }
 
   @keyframes closeMenu {
     0% {
-      height: 312px;
+      height: 90px;
       top: 50px;
     }
     100% {
