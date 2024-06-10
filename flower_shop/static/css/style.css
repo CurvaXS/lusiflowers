@@ -80,7 +80,12 @@ header .header__wrapper .header__settings .header__menu-account img {
 .banner .banner-info .banner-button {
   transition: 200ms ease-in-out;
 }
-.banner .banner-info .banner-button button {
+.banner .banner-info .banner-button a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+.banner .banner-info .banner-button a button {
   width: 459px;
   height: 109px;
   background: #AA7EB7;
@@ -90,7 +95,7 @@ header .header__wrapper .header__settings .header__menu-account img {
   text-align: center;
   color: #fff;
 }
-.banner .banner-info .banner-button button:active {
+.banner .banner-info .banner-button a button:active {
   transform: scale(0.9);
 }
 

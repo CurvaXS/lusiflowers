@@ -31,7 +31,10 @@
             <div class="header__search">
                 <input type="text" placeholder="Поиск" />
             </div>
-            <div class="header__menu-main"><a href="">Отзывы</a><a href="">Доставка</a></div>
+            <div class="header__menu-main">
+                <a href="#FAQ">Отзывы</a>
+                <a href="#delivery">Доставка</a>
+            </div>
             <div class="header__settings">
                 <div class="header__menu-burger">
                     <details>
@@ -55,7 +58,7 @@
     {% block content %}{% endblock %}
 
     <footer>
-        <div class="footer__top">
+        <div class="footer__top" id="delivery">
             <div class="footer__wrapper">
                 <div class="block__footer-logo">
                     <h1 class="footer-logo-title">Служба заботы</h1>

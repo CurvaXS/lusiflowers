@@ -6,12 +6,15 @@
     <div class="banner-info">
         <p>У нас вы найдёте лучшие букеты и композиции</p>
         <div class="banner-button">
-            <button type="button">Каталог</button>
+            <a href="#catalog">
+               <button type="button">Каталог</button> 
+            </a>
+            
         </div>
     </div>
 </div>
 <div class="wrapper">
-    <div class="block__bouquet">
+    <div class="block__bouquet" id="catalog">
         <div class="block_top">
           <div class="block__name">
             <h1>Авторские букеты</h1>
@@ -42,11 +45,11 @@
         </div>
       </div>
     
-      <div class="block__bouquet">
+      <div class="block__bouquet" >
         <div class="block_top">
           <div class="block__name">
-            <h1>Авторские букеты</h1>
-            <h3>Оригинальные дизайнерские букеты</h3>
+            <h1>Композиции</h1>
+            <h3>Самые красивые композиции</h3>
           </div>
           <div class="block__price">
             <p>От 2000 руб.</p>
@@ -55,7 +58,7 @@
         
         {% if compositions %}
         <div class="block__items">
-            {% for item in autors_bucket %}
+            {% for item in compositions %}
             <div class="item">
                 <img src="{{ item.photo_url }}" alt="">
                 <div class="item-info">
@@ -77,8 +80,8 @@
       <div class="block__bouquet">
         <div class="block_top">
           <div class="block__name">
-            <h1>Авторские букеты</h1>
-            <h3>Оригинальные дизайнерские букеты</h3>
+            <h1>Корзины</h1>
+            <h3>Корзины на любой вкус и цвет</h3>
           </div>
           <div class="block__price">
             <p>От 2000 руб.</p>
@@ -86,7 +89,7 @@
         </div>
         {% if compositions %}
         <div class="block__items">
-            {% for item in autors_bucket %}
+            {% for item in busket %}
             <div class="item">
                 <img src="{{ item.photo_url }}" alt="">
                 <div class="item-info">
@@ -104,7 +107,7 @@
           <p>Показать больше</p><img src="{% static 'img/show_more.png' %}" alt="">
         </div>
       </div>
-    <div class="block__FAQ">
+    <div class="block__FAQ" id="FAQ">
         <div class="FAQ-item">
             <p class="FAQ-answer">
                 Привозите ли вы подарки ко времени?

@@ -106,8 +106,11 @@ header {
 
         .banner-button {
             transition: 200ms ease-in-out;
-
-            button {
+            a{
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                button {
                 width: 459px;
                 height: 109px;
                 background: #AA7EB7;
@@ -121,6 +124,8 @@ header {
             button:active {
                 transform: scale(0.9);
             }
+            }
+            
         }
     }
 
