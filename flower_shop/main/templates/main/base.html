@@ -31,9 +31,17 @@
             <div class="header__logo-alt">
                 <p>Lusi Flowers</p>
             </div>
-            <div class="header__search">
+            <!-- <div class="header__search">
                 <input type="text" placeholder="Поиск" />
-            </div>
+            </div> -->
+
+
+            <form action='{% url "search" %}' method="get" class="header__search">
+                <input type="search" type="text" name="q" placenolder="Поиск новостей">
+                <button type="submit">Найти</button>
+            </form>
+
+
             <div class="header__menu-main">
                 <a href="#FAQ">FAQ</a>
                 <a href="#delivery">Доставка</a>

@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="wrapper">
+    <div class="block__bouquet" >
+        <div class="block_top">
+            <div class="block__name">
+                <h1>Букеты по вашему запросу</h1>
+                <h3>Оригинальные дизайнерские букеты</h3>
+            </div>
+            <div class="block__price">
+                <p>От 2000 руб.</p>
+            </div>
+        </div>
+        {% if results %}
+        <div class="block__items" id="autors_bucket_items">
+            {% for item in results %}
+            <div class="item">
+                <img src="{{ item.photo_url }}" alt="">
+                <div class="item-info">
+                    <p class="item-name">{{ item.name }}</p>
+                    <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
+                    <p class="item-price">{{ item.price }} ₽</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>Ничего не найдено, проверьте ваш запрос</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
