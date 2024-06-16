@@ -7,65 +7,66 @@
         <p>У нас вы найдёте лучшие букеты и композиции</p>
         <div class="banner-button">
             <a href="#catalog">
-               <button type="button">Каталог</button> 
+                <button type="button">Каталог</button>
             </a>
-            
+
         </div>
     </div>
 </div>
 <div class="wrapper">
     <div class="block__bouquet" id="catalog">
         <div class="block_top">
-          <div class="block__name">
-            <h1>Авторские букеты</h1>
-            <h3>Оригинальные дизайнерские букеты</h3>
-          </div>
-          <div class="block__price">
-            <p>От 2000 руб.</p>
-          </div>
+            <div class="block__name">
+                <h1>Авторские букеты</h1>
+                <h3>Оригинальные дизайнерские букеты</h3>
+            </div>
+            <div class="block__price">
+                <p>От 2000 руб.</p>
+            </div>
         </div>
         {% if autors_bucket %}
-        <div class="block__items">
+        <div class="block__items" id="autors_bucket_items">
             {% for item in autors_bucket %}
             <div class="item">
                 <img src="{{ item.photo_url }}" alt="">
                 <div class="item-info">
-                <p class="item-name">{{ item.name }}</p>
-                <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
-                <p class="item-price">{{ item.price }} ₽</p>
-            </div>
+                    <p class="item-name">{{ item.name }}</p>
+                    <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
+                    <p class="item-price">{{ item.price }} ₽</p>
+                </div>
             </div>
             {% endfor %}
         </div>
         {% else %}
         <p>Ничего не найдено</p>
         {% endif %}
-        <div class="show_more">
-          <p>Показать больше</p><img src="{% static 'img/show_more.png' %}" alt="">
+        <div class="show_more" id="show-more-btn-autors">
+            <p>Показать больше</p>
+            <img src="{% static 'img/show_more.png' %}" alt="">
         </div>
-      </div>
-    
-      <div class="block__bouquet" >
+    </div>
+
+    <div class="block__bouquet">
         <div class="block_top">
-          <div class="block__name">
-            <h1>Композиции</h1>
-            <h3>Самые красивые композиции</h3>
-          </div>
-          <div class="block__price">
-            <p>От 2000 руб.</p>
-          </div>
+            <div class="block__name">
+                <h1>Композиции</h1>
+                <h3>Самые красивые композиции</h3>
+            </div>
+            <div class="block__price">
+                <p>От 2000 руб.</p>
+            </div>
         </div>
-        
+
         {% if compositions %}
         <div class="block__items">
             {% for item in compositions %}
             <div class="item">
                 <img src="{{ item.photo_url }}" alt="">
                 <div class="item-info">
-                <p class="item-name">{{ item.name }}</p>
-                <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
-                <p class="item-price">{{ item.price }} ₽</p>
-            </div>
+                    <p class="item-name">{{ item.name }}</p>
+                    <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
+                    <p class="item-price">{{ item.price }} ₽</p>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -73,19 +74,19 @@
         <p>Ничего не найдено</p>
         {% endif %}
 
-        <div class="show_more">
-          <p>Показать больше</p><img src="{% static 'img/show_more.png' %}" alt="">
+        <div class="show_more" id="show-more-btn-compositions">
+            <p>Показать больше</p><img src="{% static 'img/show_more.png' %}" alt="">
         </div>
-      </div>
-      <div class="block__bouquet">
+    </div>
+    <div class="block__bouquet">
         <div class="block_top">
-          <div class="block__name">
-            <h1>Корзины</h1>
-            <h3>Корзины на любой вкус и цвет</h3>
-          </div>
-          <div class="block__price">
-            <p>От 2000 руб.</p>
-          </div>
+            <div class="block__name">
+                <h1>Корзины</h1>
+                <h3>Корзины на любой вкус и цвет</h3>
+            </div>
+            <div class="block__price">
+                <p>От 2000 руб.</p>
+            </div>
         </div>
         {% if compositions %}
         <div class="block__items">
@@ -93,20 +94,21 @@
             <div class="item">
                 <img src="{{ item.photo_url }}" alt="">
                 <div class="item-info">
-                <p class="item-name">{{ item.name }}</p>
-                <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
-                <p class="item-price">{{ item.price }} ₽</p>
-            </div>
+                    <p class="item-name">{{ item.name }}</p>
+                    <span>Бесплатная доставка через 2 ч с 10:00 до 20:00</span>
+                    <p class="item-price">{{ item.price }} ₽</p>
+                </div>
             </div>
             {% endfor %}
         </div>
         {% else %}
         <p>Ничего не найдено</p>
         {% endif %}
-        <div class="show_more">
-          <p>Показать больше</p><img src="{% static 'img/show_more.png' %}" alt="">
+        <div class="show_more" id="show-more-btn-busket">
+            <p>Показать больше</p>
+            <img src="{% static 'img/show_more.png' %}" alt="">
         </div>
-      </div>
+    </div>
     <div class="block__FAQ" id="FAQ">
         <div class="FAQ-item">
             <p class="FAQ-answer">
@@ -151,30 +153,55 @@
 </div>
 {% endblock %}
 
-<h1>Текст</h1>
+{% block script %}
 
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+      
+      const csrftoken = getCookie('csrftoken');
+    
+      document.getElementById('show-more-btn-autors').addEventListener('click', function () {
+        const csrftoken = getCookie('csrftoken');
+        fetch('/show-more/', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrftoken,
+                'Content-Type': 'application/json', // Убедитесь, что тип контента установлен правильно
+                // Если вы отправляете какие-либо данные в запросе, добавьте их здесь
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                if (response.headers.get('Content-Type').includes('application/json')) {
+                    return response.json();
+                } else {
+                    throw new Error('Expected JSON response but got something else');
+                }
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .then(data => {
+            if (data.more_items) {
+                let div = document.querySelector('#autors_bucket_items');
+                alert(JSON.stringify(data.more_items));
+                data.more_items.forEach(item => {
+                    let li = document.createElement('li');
+                    li.textContent = item.name;
+                    div.appendChild(li);
+                    alert('Товар добавлен');
+                });
+            } else {
+                this.disabled = true;
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+        });
+    });
+</script>
+{% endblock %}
